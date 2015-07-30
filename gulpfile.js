@@ -32,7 +32,7 @@ gulp.task("html", function() {
 })
 
 gulp.task("jsdoc", ["js"], function() {
-	return gulp.src("dest/js/*.js")
+	return gulp.src("dest/js/*")
 		.pipe(jsdoc("dest/docs"))
 })
 

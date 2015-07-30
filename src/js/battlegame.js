@@ -322,6 +322,7 @@ var Game = React.createClass({
 						active={this.state.inBattle}><Glyphicon glyph="knight" /> バトルボタン</Button>
 				</Col>
 				<Col sm={4}>
+					<br />
 					<Panel className="resultPane" ref="resultPane" header={<span><Glyphicon glyph="headphones" /> 実況席</span>}>{text}</Panel>
 				</Col>
 			</Row>
@@ -337,16 +338,25 @@ var FighterEditor = React.createClass({
 		this.props.onDelete(this.props.id)
 	},
 	render() {
-		return <div>
-			<Input label="名前" ref="name" name="name" type="text" bsSize="small" value={this.props.fighter.name} onChange={this.onChange} disabled={this.props.disabled} />
-			<Input label="攻撃力" ref="attack" name="attack" type="text" bsSize="small" value={this.props.fighter.attack} onChange={this.onChange} disabled={this.props.disabled} />
-			<Input label="防御力" ref="defense" name="defense" type="text" bsSize="small" value={this.props.fighter.defense} onChange={this.onChange} disabled={this.props.disabled} />
-			<Input label="はやさ" ref="speed" name="speed" type="text" bsSize="small" value={this.props.fighter.speed} onChange={this.onChange} disabled={this.props.disabled} />
-			<Input label="最大HP" ref="maxHp" name="maxHp" type="text" bsSize="small" value={this.props.fighter.maxHp} onChange={this.onChange} disabled={this.props.disabled} />
-			<ConfirmButton
-				onClick={this.onClickDelete}
-				disabled={Store.fighters.length <= 2}>削除</ConfirmButton>
-		</div>
+		return <Grid>
+			<Row>
+				<Col sm={7}>
+					<Input label="名前" ref="name" name="name" type="text" bsSize="small" value={this.props.fighter.name} onChange={this.onChange} disabled={this.props.disabled} />
+					<Input label="攻撃力" ref="attack" name="attack" type="text" bsSize="small" value={this.props.fighter.attack} onChange={this.onChange} disabled={this.props.disabled} />
+					<Input label="防御力" ref="defense" name="defense" type="text" bsSize="small" value={this.props.fighter.defense} onChange={this.onChange} disabled={this.props.disabled} />
+					<Input label="すばやさ" ref="speed" name="speed" type="text" bsSize="small" value={this.props.fighter.speed} onChange={this.onChange} disabled={this.props.disabled} />
+					<Input label="最大HP" ref="maxHp" name="maxHp" type="text" bsSize="small" value={this.props.fighter.maxHp} onChange={this.onChange} disabled={this.props.disabled} />
+				</Col>
+				<Col sm={2}>
+					<br />
+					<ConfirmButton
+						onClick={this.onClickDelete}
+						disabled={Store.fighters.length <= 2}
+						block>削除</ConfirmButton>
+					<br />
+				</Col>
+			</Row>
+		</Grid>
 	},
 })
 
