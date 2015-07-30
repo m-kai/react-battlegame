@@ -1,0 +1,23 @@
+{
+  "name": "react-battlegame",
+  "version": "1.0.0",
+  "description": "battlegame with react and bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp all",
+    "watch": "gulp watch"
+  },
+  "author": "esper",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^3.3.5",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "jsdoc": "^3.3.2",
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.24.2",
+    "react-cookie": "^0.2.5",
+    "react-tools": "^0.13.3"
+  }
+}
