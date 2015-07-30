@@ -1,5 +1,6 @@
 var gulp = require('gulp')
 var babel = require('gulp-babel')
+var jsdoc = require('gulp-jsdoc')
 
 gulp.task("js", function() {
 	return gulp.src("src/js/*.*")
@@ -30,9 +31,14 @@ gulp.task("html", function() {
 		.pipe(gulp.dest("dest"))
 })
 
+gulp.task("jsdoc", ["js"], function() {
+	return gulp.src("dest/js/*.js")
+		.pipe(jsdoc("dest/docs"))
+})
+
 gulp.task("watch", function() {
 	gulp.watch("src/js/*.*", ["js"])
 	gulp.watch("src/*.html", ["html"])
 })
 
-gulp.task("all", ["js", "lib", "css", "html"]) // 並列処理される
+gulp.task("all", ["lib", "css", "html", "jsdoc"]) // 並列処理される
